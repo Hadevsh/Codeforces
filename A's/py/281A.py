@@ -1,8 +1,11 @@
 def main() -> None:
-    w: str = str(input())
-    w = w.capitalize()
+    w: list[str] = list(str(input()))
 
-    print(w)
+    w[0] = w[0].upper()
+    res: str = ""
+    
+    for c in w: res += c
+    print(res)
 
 if __name__ == "__main__":
     main()
