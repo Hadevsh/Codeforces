@@ -4,7 +4,6 @@ using namespace std;
 
 int main() {
     string w; cin >> w;
-
     vector<char> distinct;
 
     for (auto c : w) {
