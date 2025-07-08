@@ -1,7 +1,7 @@
 def main() -> None:
     w: str = str(input())
-    w.capitalize()
-    
+    w = w.capitalize()
+
     print(w)
 
 if __name__ == "__main__":
