@@ -5,20 +5,20 @@ using namespace std;
 int main() {
     int n = 5; // Must be an odd number
 
-    int x = n / 2, y = n / 2; // Middle of the matrix
-    int x1, y1;
+    int m = n / 2; // Middle of the matrix
+    int x, y;
 
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             int v; cin >> v;
             if (v == 1) {
-                x1 = i;
-                y1 = j;
+                x = i;
+                y = j;
             }
         }
     }
 
-    int res = abs(x1 - x) + abs(y1 - y);
+    int res = abs(x - m) + abs(y - m);
     cout << res;
     
     return 0;
