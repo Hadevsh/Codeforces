@@ -2,6 +2,8 @@
 
 A curated collection of solutions to Codeforces problems, organized by problem round letter and implemented in C++, Python, and accompanied by compiled executables for Windows.
 
+[Problemset](https://codeforces.com/problemset)
+
 ## 📁 Project Structure
 ```
 ├── A/                     # Solutions for "A" problems
