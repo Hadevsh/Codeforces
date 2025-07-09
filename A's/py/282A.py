@@ -2,7 +2,7 @@ def main() -> None:
     t: int = int(input())
     res: int = 0
 
-    while t:
+    while t:  # > 0
         w: str = str(input())
 
         if w[0] == "-" or w[len(w) - 1] == "-": res -= 1
