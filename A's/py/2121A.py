@@ -4,7 +4,8 @@ def main() -> None:
     while t:
         n, s = map(int, input().split())
 
-        values: list[int] = list(map(int, input().split())).sort()
+        values: list[int] = list(map(int, input().split()))
+        values.sort()
 
         Lval: int = values[0]
         Rval: int = values[-1]
