@@ -6,7 +6,6 @@ int main() {
     string s; cin >> s;
 
     string uppercase = "QWERTYUIOPASDFGHJKLZXCVBNM";
-    string lowercase = "qwertyuiopasdfghjklzxcvbnm";
 
     int n = s.size();
     int u {0}; int l {0};
