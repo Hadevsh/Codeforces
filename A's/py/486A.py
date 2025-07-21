@@ -1,5 +1,5 @@
 def main() -> None:
-    n: int = 0
+    n: int = int(input())
     if n % 2 == 0:
         # n = 2k -> f(n) = k
         print(n / 2)
