@@ -10,7 +10,7 @@ int add(int a, int b) {
 }
 int sub(int a, int b) {
     a -= b;
-    if (a >= MOD) a += MOD;
+    if (a < 0) a += MOD;
     return a;
 }
 
@@ -19,10 +19,9 @@ int main() {
     cin.tie(nullptr);
 
     int t; cin >> t;
-    
     vector<pair<int, int>> tests(t);
-    int max_x = 0;
     
+    int max_x = 0;
     for (int i = 0; i < t; i++) {
         int n, x; cin >> n >> x;
         tests[i] = {n, x};
@@ -30,7 +29,7 @@ int main() {
     }
     
     // Largest i with i * (i + 1) / 2 <= max_x 
-    int n0 = (int)((sqrt(8.0 * max_x + 1) - 1) / 2);
+    int n0 = int((sqrt(8.0L * max_x + 1) - 1) / 2);
     // Any n > n0 has 0 answers
     vector<vector<int>> by_n(n0+1);
     for (int i = 0; i < t; i++) {
@@ -53,15 +52,15 @@ int main() {
         
         // Max M we ever need to answer tests with n = i:
         // X' = x - i * (i - 1) / 2 must be >= i and <= max_x
-        long long cut = max_x - (long long)i * (i - 1) / 2;
-        if (cut < i) {
+        long long cutoff = max_x - 1LL * i * (i - 1) / 2;
+        if (cutoff < i) {
             // None of the test with this n can be != zero
-            for (int idx : by_n[i]) {
+            for (int idx : by_n[i]) 
                 res[idx] = 0;
-                continue;
-            }
+            continue;
         }
-        int max_M = (int)cut;
+        int max_M = int(cutoff);
+
         // Build prefix sum pref[M] = sum_{t=0..M} dp[t]
         pref.resize(max_M + 1);
         pref[0] = dp[0];
@@ -72,11 +71,11 @@ int main() {
         // Answer all tests with n = i
         for (int idx : by_n[i]) {
             int x = tests[idx].second;
-            long long Xp = x - (long long)i * (i - 1) / 2;
+            long long Xp = x - 1LL * i * (i - 1) / 2;
             if (Xp < i) {
                 res[idx] = 0;
             } else {
-                int up = (int)Xp;
+                int up = int(Xp);
                 // sum_{M=i..up} dp[M] = pref[up] - pref[i - 1]
                 res[idx] = sub(pref[up], pref[i - 1]);
             }
