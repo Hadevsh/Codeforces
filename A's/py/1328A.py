@@ -2,11 +2,8 @@ def main() -> None:
     t: int = int(input())
     while t:
         a, b = map(int, input().split())
-        moves: int = 0
-        while a % b != 0:
-            moves += 1
-            a += 1
-        print(moves)
+        if a % b == 0: print(0)
+        else: print(b - (a % b))
         t -= 1
 
 if __name__ == "__main__":
