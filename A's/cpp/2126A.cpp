@@ -4,8 +4,7 @@ using namespace std;
 
 int main() {
     int t; cin >> t;
-    while (t--)
-    {
+    while (t--) {
         int x; cin >> x;
         int y = 0;
         string x_s = to_string(x);
@@ -22,7 +21,6 @@ int main() {
             y_s = to_string(y);
         }
     }
-    
     
     return 0;
 }
