@@ -8,13 +8,12 @@ int main() {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
             if (i % 2 == 0) cout << "#";
-            else {
-                if (!right && j == 0) cout << "#";
-                else if (right && j == m - 1) cout << "#";
+            else  {
+                if ((right && j == m - 1) || (!right && j == 0)) cout << "#";
                 else cout << ".";
-                right = !right;
             }
         }
+        if (i % 2 != 0) right = !right;
         cout << endl;
     }
     
